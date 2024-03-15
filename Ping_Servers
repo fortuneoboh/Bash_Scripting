@@ -1,0 +1,9 @@
+#!/bin/bash
+for ((x=0; x<256; x++)); do
+  ping -c 1 23.227.36.$x >> /dev/null 2>&1
+  if [ $? -eq 0 ]; then
+    echo "Server 23.227.36.$x is up and running."
+  else
+    echo "Server 23.227.36.$x is unreachable."
+  fi
+done
